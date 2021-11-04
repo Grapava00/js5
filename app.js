@@ -71,7 +71,24 @@ function renderUser() {
 renderUser();
 
 
+//4. (მოქმედებები) #3 დავალებაში შექმნილ user card - ს აქვს ღილაკები (აიქონები თუ ვერ ნახეთ ამ ღილაკებზე სიტყვიერად დაწერეთ წაშლა და ინფო),
+// წაშლა ღილაკზე დაჭერით წავშალოთ შესაბამისი user card-ი, ინფო ღილაკზე დაჭერის შედეგად ღილაკების ქვემოთ გამოვაჩინოთ email ცენტრში
 
+const removeBtn = document.querySelectorAll('.user_remove');
+removeBtn.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const tr = e.target.parentNode.parentNode;
+        tr.remove();
+    })
+})
+
+const addEmail = document.querySelectorAll('.user_info');
+addEmail.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const tr = e.target.parentNode.parentNode;
+        tr.append(users[0].email);
+    })
+})
 
 
 
